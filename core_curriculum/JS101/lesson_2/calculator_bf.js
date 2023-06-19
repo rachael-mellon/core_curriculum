@@ -1,6 +1,6 @@
 const rl = require('readline-sync');
 
-const MESSAGES = require('./calculator_messages.JSON');
+const MESSAGES = require('./calculator_messages.json');
 
 function prompt(message) {
   console.log(`=> ${message}`);
@@ -10,25 +10,25 @@ function invalidNumber(num) {
 }
 
 function calculator() {
-  prompt(MESSAGES.welcome);
-  prompt(MESSAGES.firstNumber);
+  prompt(MESSAGES['en']['welcome']);
+  prompt(MESSAGES['en']['firstNumber']);
   let num1 = rl.question();
   while (invalidNumber(num1)) {
-    prompt(MESSAGES.invalidInput);
+    prompt(MESSAGES['en']['invalidInput']);
     num1 = rl.question();
   }
 
-  prompt(MESSAGES.secondNumber);
+  prompt(MESSAGES['en']['secondNumber']);
   let num2 = rl.question();
   while (invalidNumber(num2)) {
-    prompt(MESSAGES.invalidInput);
+    prompt(MESSAGES['en']['invalidInput']);
     num2 = rl.question();
   }
 
-  prompt(MESSAGES.operationChoice);
+  prompt(MESSAGES['en']['operationChoice'];
   let operation = rl.question();
   while (!['1', '2', '3', '4'].includes(operation)) {
-    prompt(MESSAGES.invalidOperation);
+    prompt(MESSAGES['en']['invalidOperation'];
     operation = rl.question();
   }
 
@@ -48,14 +48,14 @@ function calculator() {
       break;
   }
 
-  prompt(MESSAGES.result + output);
+  prompt(MESSAGES['en']['result'] + output);
 
-  prompt(MESSAGES.newCalculation);
-  const cont = rl.question;
-  if (cont === 'y') {
+  prompt(MESSAGES['en']['newCalculation'];
+  const cont = rl.question();
+  while (cont === 'y') {
     calculator();
-  } else {
-    prompt(MESSAGES.end);
   }
+  prompt(MESSAGES['en']['end'];
+  
 }
 calculator();
