@@ -51,19 +51,23 @@ console.log(`Today my ${adjective1} dog broke my ${noun1} when he tried to ${ver
 // etc etc...
 
 // 7) double number 
-//COME BACK TO THIS ONE
-function doubleNumber(number)
-let firstHalfIndex = 0;
-let secondHalfIndex = string.length / 2;
-while (firstHalfIndex < (string.length / 2)) {
-  if (firstHalfIndex == secondHalfIndex) {
-    console.log(string);
+function twice(number) {
+  if (isDoubleNumber(number)) {
+    return number;
   } else {
-    console.log(Number(string) * 2);
+    return number * 2;
   }
-  firstHalfIndex += 1
-  secondHalfIndex += 1
 }
+
+function isDoubleNumber(number) {
+  let stringNumber = String(number);
+  let center = Math.floor(stringNumber.length / 2);
+  let leftNumber = stringNumber.substring(0, center);
+  let rightNumber = stringNumber.substring(center);
+
+  return leftNumber === rightNumber;
+}
+
 
 // 8) Grade book
 function gradeAverage(grade1, grade2, grade3) {
@@ -87,6 +91,9 @@ function gradeAverage(grade1, grade2, grade3) {
   }
 }
 // 9) Clean up
+function cleanUp(text) {
+  return text.replace(/[^a-z]/gi, " ").replace(/\s+/gi, " ");
+}
 // 10) What century
 function century(year) {
   let centuryNumber = Math.floor((Number(year) / 100) + 1);
