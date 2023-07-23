@@ -18,4 +18,27 @@
 //    three is: three
 // the reassignments of the variables within the function does not have effect on 
 // the variables defined in the global scope after the function
-// b)
+// b) one is: one
+//    two is: two
+//    three is: three
+// the function does not affect changes on the global variables
+// c) one is: two
+//    two is: three
+//    three is: one
+// the destructive splice method mutates the arrays passed to the function
+// 4) 
+function isDotSeparatedIpAddress(inputString) {
+  let dotSeparatedWords = inputString.split(".");
+  if (dotSeparatedWords.length !== 4) {
+    return false;
+  }
+
+  while (dotSeparatedWords.length > 0) {
+    let word = dotSeparatedWords.pop();
+    if (!isAnIpNumber(word)) {
+      return false;
+    }
+  }
+
+  return true;
+}
