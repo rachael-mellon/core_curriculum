@@ -16,17 +16,31 @@ function inBox(text) {
 }
 
 // 3) Stringy
-//COME BACK TO THIS ONE
-function replaceNumebr(number) {
-  string = String(number);
-  for (index = 0; index <= string.length; index += 1) {
-    if (index % 2 == 0) {
-      string.replace(string[index], '1');
+// P: function, input- integer, output- returns string of alternating 1's and 0's length of int
+// D: integer, string
+// A: set empty string, increment variable, when variable is even add 1 to empty string, when
+// variable is odd add 0 to empty string while variable <= integer
+// C:
+function stringy(int) {
+  let stringyString = '';
+  let i = 1;
+  while (i <= int) {
+    if (i % 2 !== 0) {
+      stringyString += '1';
     } else {
-      string.replace(string[index], '0');
+      stringyString += '0';
     }
+    i += 1;
   }
+  return stringyString;
 }
+
+
+// E: 
+console.log(stringy(6));    // "101010"
+console.log(stringy(9));    // "101010101"
+console.log(stringy(4));    // "1010"
+console.log(stringy(7));    // "1010101"
 
 // 5 right triangle
 function triangle(n) {
